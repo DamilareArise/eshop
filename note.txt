@@ -1,0 +1,36 @@
+model
+view
+controllers
+routes
+
+Bank app
+
+functions
+    signup() 
+        email
+        name
+        password
+        account_no
+
+    signin()
+    deposit()
+    withdraw()
+
+
+Database
+    user info
+
+
+pages
+    login page
+    signup page
+    dashboard
+
+
+In Django
+
+model = Database
+template = html pages
+urls = edu.sqi.ng/contact
+views = functions
+forms
