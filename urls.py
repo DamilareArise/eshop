@@ -20,4 +20,8 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name = 'index.html'), name='home'),
+    path('contact/', TemplateView.as_view(template_name = 'contact.html'), name = "contact"),
+    path('checkout/', TemplateView.as_view(template_name = 'checkout.html'), name = "checkout"),
+    path('cart/', TemplateView.as_view(template_name = 'cart.html'), name = "cart"),
+    path('blog-single-sidebar/', TemplateView.as_view(template_name = 'blog-single-sidebar.html'), name = "blog-single-sidebar")
 ]
