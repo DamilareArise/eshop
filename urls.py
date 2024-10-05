@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
+from eshop.userApp.views import SignUpView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,5 +26,6 @@ urlpatterns = [
     path('cart/', TemplateView.as_view(template_name = 'cart.html'), name = "cart"),
     path('blog-single-sidebar/', TemplateView.as_view(template_name = 'blog-single-sidebar.html'), name = "blog-single-sidebar"),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/signup/', SignUpView.as_view(), name="signup"),
 
 ]

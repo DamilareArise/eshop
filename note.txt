@@ -34,3 +34,10 @@ template = html pages
 urls = edu.sqi.ng/contact
 views = functions
 forms
+
+
+categorizing our software
+
+1. Users   - python manage.py startapp userApp
+2. product
+3. sales/transaction

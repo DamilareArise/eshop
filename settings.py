@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bootstrapform'
+    'bootstrapform',
+    'eshop.userApp'
 ]
 
 MIDDLEWARE = [
@@ -93,6 +94,8 @@ DATABASES = {
         }
     }
 }
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 # Password validation

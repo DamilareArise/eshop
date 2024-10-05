@@ -12,6 +12,10 @@
             {{form|bootstrap}}
     
             <button type="submit" class="btn btn-primary my-2 w-100">Login</button>
+            <div class="d-flex justify-content-between">
+                <a href="{% url "signup" %}">Register</a>
+                <a href="{% url "password_reset" %}">Forget password?</a>
+            </div>
         </form>
     </div>
 
