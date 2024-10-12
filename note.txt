@@ -29,7 +29,13 @@ pages
 
 In Django
 
-model = Database
+model = Database => ORM(object relational mapping)
+CREATE TABLE user_table(id INT AUTO_INCREMENT PRIMARY KEY )
+class User():
+1. python manage.py makemigrations userApp => create a migration file(set code that would convert the class in the model into normal sql queries)
+2. python manage.py migrate => apply the migration file to the database
+
+
 template = html pages
 urls = edu.sqi.ng/contact
 views = functions
@@ -37,7 +43,7 @@ forms
 
 
 categorizing our software
-
+python manage.py startapp userApp
 1. Users   - python manage.py startapp userApp
 2. product
 3. sales/transaction
