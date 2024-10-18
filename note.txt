@@ -37,13 +37,29 @@ class User():
 
 
 template = html pages
-urls = edu.sqi.ng/contact
-views = functions
-forms
+urls = edu.sqi.ng/product - route configurations 
 
+
+views = functions 
+
+forms
 
 categorizing our software
 python manage.py startapp userApp
 1. Users   - python manage.py startapp userApp
 2. product
 3. sales/transaction
+
+
+
+# API => Apllication programming interface 
+# API is a set of defined rules that enables applications to talk to each other
+# means of communication => json(javascript object notation) => list of dictiontions
+# mobile app => react native
+# frontend web => react
+# backend => django
+
+[
+    {'username':'admin', 'password': 1223},
+    {'username':'admin', 'password': 1223},
+]

@@ -34,6 +34,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
     address = models.CharField(max_length=255, null=True, blank=True)
     date_of_birth = models.DateField(null=True, blank=True)
+    phone = models.CharField(max_length=12, null=True, blank=True, unique= True)
     gender = models.CharField(choices= sex,  max_length=10, null=True, blank=True)
     profile_picture = models.ImageField(upload_to='profile_pictures/', null=True, blank=True)
     valid_id_card = models.ImageField(upload_to='id_cards/', null=True, blank=True)
