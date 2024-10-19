@@ -45,3 +45,19 @@ class EditProfileForm(forms.ModelForm):
             'state_of_origin',
             'country'
         ]
+
+class AdminProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = [
+            'address',
+            'date_of_birth',
+            'phone',
+            'gender',
+            'profile_picture',
+            'state_of_origin',
+            'country',
+            'valid_id_card',
+            'proof_of_registration',
+            'role'
+        ]

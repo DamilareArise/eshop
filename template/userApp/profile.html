@@ -28,7 +28,16 @@
                             <li class="list-group-item"><strong>Location:</strong> {{profile.address}}</li>
                             <li>
                                 <a href="{% url "edit-profile" profile.user.id %}"><button class="btn-sm btn-primary mt-2">Edit Profile</button></a>
+                                
+                                {% if request.user.is_superuser %}
+                                {% if profile.user.is_active %}
+                                <a href="{% url "de-activate" profile.user.id %}"><button class="btn-sm btn-danger mt-2">Deactivate</button></a>
+                                {% else %}
+                                <a href="{% url "de-activate" profile.user.id %}"><button class="btn-sm btn-success mt-2">Activate</button></
+                                {% endif %}
+                                {% endif %}
                             </li>
+                           
                         </ul>
                     </div>
                 </div>

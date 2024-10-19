@@ -1,0 +1,30 @@
+{% extends "common.html" %}
+    {% block content %}
+    {% load static %}
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">profile</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if users %}
+            {% for person in users %}
+            <tr>
+                <th scope="row">id-00{{person.user.id}}</th>
+                <td>{{person.user.first_name}}</td>
+                <td>{{person.user.last_name}}</td>
+                <td>
+                    <a href="{% url "profile" person.user.id %}"> view more </a>
+                </td>
+            </tr>
+            {% endfor %}
+          {% endif %}
+        </tbody>
+      </table>
+
+    {% endblock %}
