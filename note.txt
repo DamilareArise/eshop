@@ -63,3 +63,54 @@ python manage.py startapp userApp
     {'username':'admin', 'password': 1223},
     {'username':'admin', 'password': 1223},
 ]
+
+
+
+SQL = Structured query language
+
+DATABASE ->  A place where we can store, retrieve and manage data(informations)
+
+DBMS -> database management system 
+Two basic kinds DBMS
+1. Relational DBMS(RDBMS) => SQL(Structured query language)
+    i. Database => e.g ecommerce_db
+    ii. Tables(rows and columns) NOTE: The tables are relatable e.g user_table, product_table
+examples: mysql, postgreSQL, ORACLE, Microsoft SQL, SQLITE
+
+mySql workbench
+XAmmp
+
+sublanguage in SQL
+
+1. DDL => Data Definition language
+i. CREATE DATABASE practice_db;
+ii. CREATE TABLE user_table(id INT(4) PRIMARY KEY AUTO_INCREMENT, fullname VARCHAR(50), email VARCHAR(50) UNIQUE, date_created DATETIME DEFAULT CURRENT_TIMESTAMP )
+iii. DROP TABLE user_table;
+iv. DROP DATABASE practice_db;
+
+
+
+2. Non Relational DBMS => NOSQL
+i. cluster => two or more database are called cluster
+ii. Database => e.g ecommerce_db
+iii. Collections => one or more documents e.g user_collection, product_collection
+[
+    {
+        id: 2,
+        fullname: 'Ayo mide',
+        age: 34  
+    },
+    {
+        id: 2,
+        fullname: 'Ayo mide',
+        age: 34  
+    }
+]
+
+iv. Documents => e.g     {
+        id: 2,
+        fullname: 'Ayo mide',
+        age: 34  
+    }
+
+e.g noSQL => MONGODB, redis
