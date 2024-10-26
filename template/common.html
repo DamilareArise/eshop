@@ -206,7 +206,7 @@
 									<div class="navbar-collapse">	
 										<div class="nav-inner">	
 											<ul class="nav main-menu menu navbar-nav">
-													<li class="active"><a href="#">Home</a></li>
+													<li class="active"><a href="{% url "home" %}">Home</a></li>
 													<li><a href="#">Product</a></li>												
 													<li><a href="#">Service</a></li>
 													{% if request.user.is_authenticated %}
@@ -215,6 +215,7 @@
 															<li><a href="{% url "profile" request.user.id %}">Profile</a></li>
 															{% if request.user.is_staff %}
 															<li><a href="{% url "all-user" %}">all users</a></li>
+															<li><a href="{% url "create-product" request.user.id %}">Create product</a></li>
 															{% endif %}
 															<li><a href="{% url "cart" %}">Cart</a></li>
 															<li><a href="{% url "checkout" %}">Checkout</a></li>

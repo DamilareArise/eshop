@@ -4,15 +4,15 @@
 
 
     <div class="container col-9 col-md-4 p-3 shadow-sm my-5">
-        <h3 class="text-center">Profile</h3>
+        <h3 class="text-center">Create Product</h3>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {% load bootstrap %}
             
-            {{userForm|bootstrap}}
-            {{profileForm|bootstrap}}
+            {{productForm|bootstrap}}
+        
     
-            <button type="submit" class="btn btn-primary my-2 w-100">Update</button>
+            <button type="submit" class="btn btn-primary my-2 w-100">Create</button>
             
         </form>
     </div>

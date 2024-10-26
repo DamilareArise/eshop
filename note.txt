@@ -39,15 +39,16 @@ class User():
 template = html pages
 urls = edu.sqi.ng/product - route configurations 
 
-
 views = functions 
 
 forms
 
+
+
 categorizing our software
 python manage.py startapp userApp
 1. Users   - python manage.py startapp userApp
-2. product
+2. product - 
 3. sales/transaction
 
 
