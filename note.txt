@@ -88,13 +88,26 @@ i. CREATE DATABASE practice_db;
 ii. CREATE TABLE user_table(id INT(4) PRIMARY KEY AUTO_INCREMENT, fullname VARCHAR(50), email VARCHAR(50) UNIQUE, date_created DATETIME DEFAULT CURRENT_TIMESTAMP )
 iii. DROP TABLE user_table;
 iv. DROP DATABASE practice_db;
+v. ALTER TABLE staffs ADD gender VARCHAR(10);
 
+
+2. DML => DATA MANIPULATION LANGUAGE
+i. INSERT INTO company_db.staffs(fullname, email, department, salary, sex) VALUES ("Michael Ige", "michael@gmail.com", "Finance", "20000","Others");
+
+INSERT INTO staffs(fullname, email, department, salary, sex) VALUES 
+("Debby Folasayo", "debby@gmail.com", "Hr", "50000","Female"),
+("Afeez Laface", "laface@gmail.com", "IT", "30000","Male"),
+("Fatimat Olamide", "ola@gmail.com", "Hr", "50000","Female");
+
+ii. UPDATE staffs SET sex = 'Male' WHERE staff_id = 1;
+
+iii. DELETE FROM staffs WHERE staff_id=4;
 
 
 2. Non Relational DBMS => NOSQL
 i. cluster => two or more database are called cluster
 ii. Database => e.g ecommerce_db
-iii. Collections => one or more documents e.g user_collection, product_collection
+iii. Collections => two or more documents e.g user_collection, product_collection
 [
     {
         id: 2,
@@ -115,3 +128,37 @@ iv. Documents => e.g     {
     }
 
 e.g noSQL => MONGODB, redis
+
+
+
+RDBMS/SQL
+
+When it comes relational database management system;
+1. it involves tables
+2. the tables are relatable
+
+
+Relationships between tables
+
+1. one to one relationship: e.g user_table and profile_table
+
+user_table
+
+user_id(primary key)    fullname      email               password
+1                       Fatimat   fatimat@gmail             1234
+2                       Debby       debby@gmail              1234
+
+
+profile_table
+profile_id          gender              address     user_id(foriegn key)
+1                      f                oshogbo         2
+
+
+2. one to many relationship e.g profile_table and transaction_table
+
+tran_id         Type        amount         profile_id
+1               credit         2b               1
+2               debit          1b               1
+
+
+3. many to many relationship e.g 
