@@ -26,12 +26,13 @@ urlpatterns = [
     path('', displayProductVIew, name='home'),
     path('contact/', TemplateView.as_view(template_name = 'contact.html'), name = "contact"),
     path('checkout/', TemplateView.as_view(template_name = 'checkout.html'), name = "checkout"),
-    path('cart/', TemplateView.as_view(template_name = 'cart.html'), name = "cart"),
+    # path('cart/', TemplateView.as_view(template_name = 'cart.html'), name = "cart"),
     path('blog-single-sidebar/', TemplateView.as_view(template_name = 'blog-single-sidebar.html'), name = "blog-single-sidebar"),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/signup/', SignUpView.as_view(), name="signup"),
     path('user-data/', include('eshop.userApp.urls')),
     path('product/', include('eshop.productApp.urls')),
+    path('cartApp/', include("eshop.cartApp.urls"))
 
 ]
 
