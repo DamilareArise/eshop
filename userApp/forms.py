@@ -61,3 +61,7 @@ class AdminProfileForm(forms.ModelForm):
             'proof_of_registration',
             'role'
         ]
+
+        widgets = {
+            'date_of_birth': forms.NumberInput(attrs={'type':'date'}),
+        }

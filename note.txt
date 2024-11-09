@@ -103,6 +103,25 @@ ii. UPDATE staffs SET sex = 'Male' WHERE staff_id = 1;
 
 iii. DELETE FROM staffs WHERE staff_id=4;
 
+3. DQL => data query language
+i. SELECT * FROM staffs;
+ii. SELECT fullname, department, salary FROM staffs;
+iii. SELECT * FROM `staffs` WHERE staff_id = 1;
+iv. SELECT * FROM `staffs` WHERE fullname = 'Michael Ige' AND staff_id = 1;
+v. SELECT * FROM `staffs` WHERE email = 'michael@gmail.com' OR staff_id = 3;
+vi. SELECT DISTINCT department FROM staffs;
+vii. SELECT * FROM `staffs` WHERE salary > 25000;
+viii. SELECT * FROM `staffs` LIMIT 3;
+ix. SELECT * FROM `staffs` LIMIT 2 OFFSET 2;
+x. SELECT *, CASE WHEN salary > 30000 THEN 'Senior Staffs' ELSE 'Junior staffs' END as category FROM staffs;
+xi. SELECT * FROM staffs WHERE fullname LIKE 'M%';
+xii. SELECT * FROM `staffs` WHERE fullname LIKE '%f%';
+xiii. SELECT COUNT(*) FROM staffs;
+xv. SELECT SUM(salary) FROM staffs; 
+xvi. SELECT AVG(salary) FROM staffs;
+xvii. SELECT MIN(salary) FROM staffs; 
+xviii. SELECT MAX(salary) FROM staffs;
+
 
 2. Non Relational DBMS => NOSQL
 i. cluster => two or more database are called cluster

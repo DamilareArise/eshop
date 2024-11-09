@@ -11,6 +11,11 @@ def displayProductVIew(request):
     return render(request, template_name='index.html', context={'allproducts':products})
 
 
+def allProductView(request):
+    products = Product.objects.all()
+    return render(request, template_name='productApp/allproducts.html', context={'allproducts':products})
+
+
 def createProductView(request, userid):
     created_by = Profile.objects.get(user_id = userid) 
     if request.method == 'POST':
@@ -28,3 +33,26 @@ def createProductView(request, userid):
         form = CreateProductForm()
         
         return render(request, template_name='productApp/create_product.html', context={'productForm':form})
+    
+
+def deleteProductView(request, prd_id):
+    product = Product.objects.get(product_id=prd_id)
+    product.delete()
+
+    return redirect("all-product")
+
+
+def editProductView(request, prd_id):
+    product = Product.objects.get(product_id=prd_id)
+
+    if request.method == 'POST':
+        form = CreateProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save() 
+            return redirect('all-product')
+        else:
+           return render(request, template_name="productApp/edit_product.html", context={"editForm":form}) 
+
+    else:
+        form = CreateProductForm(instance=product)
+        return render(request, template_name="productApp/edit_product.html", context={"editForm":form})

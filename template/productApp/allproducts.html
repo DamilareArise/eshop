@@ -1,0 +1,61 @@
+{% extends "common.html" %}
+    {% block content %}
+    {% load static %}
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Price</th>
+            <th scope="col">Category</th>
+            <th scope="col">Date created</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if allproducts %}
+            {% for product in allproducts %}
+            <tr>
+                <th scope="row">prdid-00{{product.product_id}}</th>
+                <td>{{product.title}}</td>
+                <td>#{{product.price}}</td>
+                <td>{{product.category}}</td>
+                <td>{{product.date_created}}</td>
+                <td>
+                    <a class="btn btn-primary" href="{% url "edit-product" product.product_id %}"> Edit </a>
+                </td>
+                <!-- Button trigger modal -->
+                <td>
+                    <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal_{{product.product_id}}"> Delete </a>
+                </td>
+
+                
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal_{{product.product_id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                        Are you sure?
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <a href="{% url "delete-product" product.product_id %}" class="btn btn-primary">Yes</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+
+            </tr>
+            {% endfor %}
+          {% endif %}
+        </tbody>
+      </table>
+
+    {% endblock %}
