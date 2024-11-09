@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrapform',
     'eshop.userApp',
-    'eshop.productApp'
+    'eshop.productApp',
+    'eshop.cartApp'
 ]
 
 MIDDLEWARE = [

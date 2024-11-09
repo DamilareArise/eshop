@@ -219,7 +219,7 @@
 															<li><a href="{% url "all-user" %}">all users</a></li>
 															<li><a href="{% url "create-product" request.user.id %}">Create product</a></li>
 															{% endif %}
-															<li><a href="{% url "cart" %}">Cart</a></li>
+															<li><a href="{% url "cart" request.user.id %}">Cart</a></li>
 															<li><a href="{% url "checkout" %}">Checkout</a></li>
 															<li><a href="{% url "password_change" %}">Change Password</a></li>
 														</ul>
